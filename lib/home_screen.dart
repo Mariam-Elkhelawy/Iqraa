@@ -83,7 +83,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     size: 30,
                   ),
                   label: 'الاعدادات')
-            ]),
+            ],),
         body: tabs[index],
       ),
     );
