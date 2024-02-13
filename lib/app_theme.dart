@@ -9,17 +9,14 @@ class AppTheme {
     brightness: Brightness.light,
     scaffoldBackgroundColor: Colors.transparent,
     textTheme: TextTheme(
-        bodyLarge: GoogleFonts.elMessiri(
-          fontWeight: FontWeight.w600,
-          fontSize: 25,
-          color: blackColor,
-        ),
-        bodyMedium: GoogleFonts.inter(
-          fontSize: 25,
-          color: blackColor,
-          fontWeight: FontWeight.w400
-        ),
-        bodySmall: TextStyle()),
+      bodyLarge: GoogleFonts.elMessiri(
+        fontWeight: FontWeight.w600,
+        fontSize: 25,
+        color: blackColor,
+      ),
+      bodyMedium: GoogleFonts.inter(
+          fontSize: 25, color: blackColor, fontWeight: FontWeight.w400),
+    ),
     bottomNavigationBarTheme: BottomNavigationBarThemeData(
       backgroundColor: primaryColor,
       type: BottomNavigationBarType.fixed,
@@ -27,7 +24,7 @@ class AppTheme {
       showUnselectedLabels: false,
       unselectedItemColor: Color(0xFFF8F8F8),
       selectedItemColor: blackColor,
-      selectedLabelStyle: TextStyle(fontSize: 14, color:blackColor),
+      selectedLabelStyle: TextStyle(fontSize: 14, color: blackColor),
       elevation: 0,
     ),
     appBarTheme: AppBarTheme(
