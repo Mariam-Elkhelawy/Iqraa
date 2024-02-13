@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:islami_app/tabs/ahadeth_tab.dart';
 import 'package:islami_app/tabs/quran_tab.dart';
 import 'package:islami_app/tabs/radio_tab.dart';
@@ -29,7 +28,7 @@ class _HomeScreenState extends State<HomeScreen> {
       child: Scaffold(
         appBar: AppBar(title: Text('إسلامي'),),
         bottomNavigationBar: BottomNavigationBar(
-         iconSize: 30,
+         iconSize: 35,
           currentIndex: index,
           onTap: (value) {
             index = value;
