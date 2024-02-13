@@ -27,63 +27,47 @@ class _HomeScreenState extends State<HomeScreen> {
         ),
       ),
       child: Scaffold(
-        backgroundColor: Colors.transparent,
-        appBar: AppBar(
-          backgroundColor: Colors.transparent,
-          centerTitle: true,
-          title: Text(
-            'إسلامي',
-            style: GoogleFonts.elMessiri(
-                fontSize: 30, fontWeight: FontWeight.w700),
-          ),
-        ),
+        appBar: AppBar(title: Text('إسلامي'),),
         bottomNavigationBar: BottomNavigationBar(
-            backgroundColor: Color(0xFFB7935F),
-            iconSize: 35,
-            type: BottomNavigationBarType.fixed,
-            showSelectedLabels: true,
-            showUnselectedLabels: false,
-            unselectedItemColor: Color(0xFFF8F8F8),
-            selectedItemColor: Color(0xFF242424),
-            selectedLabelStyle:
-                TextStyle(fontSize: 14, color: Color(0xFF242424)),
-            currentIndex: index,
-            onTap: (value) {
-              index = value;
-              setState(() {});
-            },
-            items: [
-              BottomNavigationBarItem(
-                label: 'الراديو',
-                icon: ImageIcon(
-                  AssetImage('assets/images/ic_radio.png'),
-                ),
+         iconSize: 30,
+          currentIndex: index,
+          onTap: (value) {
+            index = value;
+            setState(() {});
+          },
+          items: [
+            BottomNavigationBarItem(
+              label: 'الراديو',
+              icon: ImageIcon(
+                AssetImage('assets/images/ic_radio.png'),
               ),
-              BottomNavigationBarItem(
-                label: 'التسبيح',
-                icon: ImageIcon(
-                  AssetImage('assets/images/ic_sebha.png'),
-                ),
+            ),
+            BottomNavigationBarItem(
+              label: 'التسبيح',
+              icon: ImageIcon(
+                AssetImage('assets/images/ic_sebha.png'),
               ),
-              BottomNavigationBarItem(
-                label: 'الاحاديث',
-                icon: ImageIcon(
-                  AssetImage('assets/images/ic_ahadeth.png'),
-                ),
+            ),
+            BottomNavigationBarItem(
+              label: 'الاحاديث',
+              icon: ImageIcon(
+                AssetImage('assets/images/ic_ahadeth.png'),
               ),
-              BottomNavigationBarItem(
-                label: 'القرآن',
-                icon: ImageIcon(
-                  AssetImage('assets/images/ic_quran.png'),
-                ),
+            ),
+            BottomNavigationBarItem(
+              label: 'القرآن',
+              icon: ImageIcon(
+                AssetImage('assets/images/ic_quran.png'),
               ),
-              BottomNavigationBarItem(
-                  icon: Icon(
-                    Icons.settings,
-                    size: 30,
-                  ),
-                  label: 'الاعدادات')
-            ],),
+            ),
+            BottomNavigationBarItem(
+                icon: Icon(
+                  Icons.settings,
+                  size: 30,
+                ),
+                label: 'الاعدادات')
+          ],
+        ),
         body: tabs[index],
       ),
     );

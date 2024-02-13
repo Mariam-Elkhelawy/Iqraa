@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:islami_app/app_theme.dart';
 import 'package:islami_app/sura_details.dart';
 import 'package:islami_app/sura_model.dart';
 
@@ -133,19 +134,12 @@ class QuranTab extends StatelessWidget {
         ),
         Divider(
           thickness: 3,
-          color: Color(0xFFB7935F),
+          color: AppTheme.primaryColor,
         ),
-        Text(
-          'اسم السورة',
-          style: GoogleFonts.elMessiri(
-            fontWeight: FontWeight.w600,
-            fontSize: 25,
-            color: Color(0xFF242424),
-          ),
-        ),
+        Text('اسم السورة', style: Theme.of(context).textTheme.bodyLarge),
         Divider(
           thickness: 3,
-          color: Color(0xFFB7935F),
+          color: AppTheme.primaryColor,
         ),
         Expanded(
           child: ListView.separated(
@@ -159,16 +153,13 @@ class QuranTab extends StatelessWidget {
                           SuraModel(name: suraNames[index], index: index),
                     );
                   },
-                  child: Text(
-                    suraNames[index],
-                    textAlign: TextAlign.center,
-                    style: GoogleFonts.inter(
-                        fontSize: 25, color: Color(0xFf242424)),
-                  ),
+                  child: Text(suraNames[index],
+                      textAlign: TextAlign.center,
+                      style: Theme.of(context).textTheme.bodyMedium),
                 );
               },
               separatorBuilder: (context, index) => SizedBox(
-                    height: 8,
+                    height: 8
                   ),
               itemCount: suraNames.length),
         ),

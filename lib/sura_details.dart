@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:islami_app/app_theme.dart';
 import 'package:islami_app/sura_model.dart';
 
 class SuraDetailsScreen extends StatefulWidget {
@@ -29,14 +30,9 @@ class _SuraDetailsScreenState extends State<SuraDetailsScreen> {
         ),
       ),
       child: Scaffold(
-        backgroundColor: Colors.transparent,
-        appBar: AppBar(elevation: 0,
-          backgroundColor: Colors.transparent,
-          centerTitle: true,
+        appBar: AppBar(
           title: Text(
-            'إسلامي',
-            style: GoogleFonts.elMessiri(
-                fontSize: 30, fontWeight: FontWeight.w700),
+            'إسلامي'
           ),
         ),
         body: Padding(
@@ -56,7 +52,7 @@ class _SuraDetailsScreenState extends State<SuraDetailsScreen> {
                   children: [
                     Text(
                       'سورة ${model.name}',
-                      style: GoogleFonts.inter(fontSize: 30),
+                      style: Theme.of(context).textTheme.bodyMedium
                     ),
                     SizedBox(
                       width: 12,
@@ -64,12 +60,14 @@ class _SuraDetailsScreenState extends State<SuraDetailsScreen> {
                     Icon(
                       Icons.play_circle,
                       size: 27,
-                      color: Color(0xFF242424),
+                      color: AppTheme.blackColor,
                     ),
                   ],
                 ),
-                Divider(indent: 50,endIndent: 50,
-                  color: Color(0xFFB7935F),
+                Divider(
+                  indent: 50,
+                  endIndent: 50,
+                  color: AppTheme.primaryColor,
                 ),
                 Expanded(
                   child: ListView.builder(
