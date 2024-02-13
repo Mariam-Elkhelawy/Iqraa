@@ -9,6 +9,11 @@ class AppTheme {
     brightness: Brightness.light,
     scaffoldBackgroundColor: Colors.transparent,
     textTheme: TextTheme(
+      headlineLarge: GoogleFonts.elMessiri(
+        fontWeight: FontWeight.bold,
+        fontSize: 30,
+        color: blackColor,
+      ),
       bodyLarge: GoogleFonts.elMessiri(
         fontWeight: FontWeight.w600,
         fontSize: 25,
