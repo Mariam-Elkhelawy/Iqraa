@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:islami_app/app_theme.dart';
 import 'package:islami_app/sura_details.dart';
 import 'package:islami_app/sura_model.dart';
 
@@ -123,53 +123,193 @@ class QuranTab extends StatelessWidget {
     "الناس"
   ];
 
+  List<int> versesNumber = [
+    7,
+    286,
+    200,
+    176,
+    120,
+    165,
+    206,
+    75,
+    129,
+    109,
+    123,
+    111,
+    43,
+    52,
+    99,
+    128,
+    111,
+    110,
+    98,
+    135,
+    112,
+    78,
+    118,
+    64,
+    77,
+    227,
+    93,
+    88,
+    69,
+    60,
+    34,
+    30,
+    73,
+    54,
+    45,
+    83,
+    182,
+    88,
+    75,
+    85,
+    54,
+    53,
+    89,
+    59,
+    37,
+    35,
+    38,
+    29,
+    18,
+    45,
+    60,
+    49,
+    62,
+    55,
+    78,
+    96,
+    29,
+    22,
+    24,
+    13,
+    14,
+    11,
+    11,
+    18,
+    12,
+    12,
+    30,
+    52,
+    52,
+    44,
+    28,
+    28,
+    20,
+    56,
+    40,
+    31,
+    50,
+    40,
+    46,
+    42,
+    29,
+    19,
+    36,
+    25,
+    22,
+    17,
+    19,
+    26,
+    30,
+    20,
+    15,
+    21,
+    11,
+    8,
+    5,
+    19,
+    5,
+    8,
+    8,
+    11,
+    11,
+    8,
+    3,
+    9,
+    5,
+    4,
+    6,
+    3,
+    6,
+    3,
+    5,
+    4,
+    5,
+    6
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Align(
-          alignment: Alignment.center,
-          child: Image.asset('assets/images/ic_quran_top.png'),
+        Image.asset(
+          'assets/images/ic_quran_top.png',
+          height: MediaQuery.of(context).size.height * .3,
         ),
         Divider(
           thickness: 3,
-          color: Color(0xFFB7935F),
+          color: AppTheme.primaryColor,
         ),
-        Text(
-          'اسم السورة',
-          style: GoogleFonts.elMessiri(
-            fontWeight: FontWeight.w600,
-            fontSize: 25,
-            color: Color(0xFF242424),
-          ),
+        Row(
+          children: [
+            Expanded(
+                child: Text('عدد الآيات',
+                    style: Theme.of(context).textTheme.bodyLarge,
+                    textAlign: TextAlign.center)),
+            Container(
+              height: 35,
+              width: 3,
+              color: AppTheme.primaryColor,
+            ),
+            Expanded(
+                child: Text(
+              'اسم السورة',
+              style: Theme.of(context).textTheme.bodyLarge,
+              textAlign: TextAlign.center,
+            )),
+          ],
         ),
         Divider(
           thickness: 3,
-          color: Color(0xFFB7935F),
+          color: AppTheme.primaryColor,
         ),
         Expanded(
-          child: ListView.separated(
+          child: ListView.builder(
               itemBuilder: (context, index) {
-                return InkWell(
-                  onTap: () {
-                    Navigator.pushNamed(
-                      context,
-                      SuraDetailsScreen.routeName,
-                      arguments:
-                          SuraModel(name: suraNames[index], index: index),
-                    );
-                  },
-                  child: Text(
-                    suraNames[index],
-                    textAlign: TextAlign.center,
-                    style: GoogleFonts.inter(
-                        fontSize: 25, color: Color(0xFf242424)),
-                  ),
+                return Row(
+                  children: [
+                    Expanded(
+                      child: Text(versesNumber[index].toString(),
+                          textAlign: TextAlign.center,
+                          style: Theme.of(context).textTheme.bodyMedium),
+                    ),
+                  
+                    Container(
+                      height: 40,
+                      width: 3,
+                      color: AppTheme.primaryColor,
+                    ),
+                    Expanded(
+                      child: InkWell(
+                        onTap: () {
+                          Navigator.pushNamed(
+                            context,
+                            SuraDetailsScreen.routeName,
+                            arguments:
+                            SuraModel(name: suraNames[index], index: index),
+                          );
+                        },
+                        child: Text(suraNames[index],
+                            textAlign: TextAlign.center,
+                            style: Theme.of(context).textTheme.bodyMedium),
+                      ),
+                    ),
+                    
+                  ],
                 );
               },
-              separatorBuilder: (context, index) => SizedBox(
-                    height: 8,
-                  ),
               itemCount: suraNames.length),
         ),
       ],

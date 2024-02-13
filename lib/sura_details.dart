@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:islami_app/app_theme.dart';
 import 'package:islami_app/sura_model.dart';
 
 class SuraDetailsScreen extends StatefulWidget {
@@ -29,25 +30,19 @@ class _SuraDetailsScreenState extends State<SuraDetailsScreen> {
         ),
       ),
       child: Scaffold(
-        backgroundColor: Colors.transparent,
-        appBar: AppBar(elevation: 0,
-          backgroundColor: Colors.transparent,
-          centerTitle: true,
+        appBar: AppBar(
           title: Text(
-            'إسلامي',
-            style: GoogleFonts.elMessiri(
-                fontSize: 30, fontWeight: FontWeight.w700),
+            'إسلامي'
           ),
         ),
         body: Padding(
           padding: const EdgeInsets.all(16.0),
-          child: Card(
+          child: Container(
             margin: EdgeInsets.all(20),
-            color: Color(0xFFF8F8F8).withOpacity(.8),
-            shape: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(25),
-              borderSide: BorderSide(color: Colors.transparent),
-            ),
+            decoration:BoxDecoration(
+                color: Color(0xFFF8F8F8).withOpacity(.8),
+              borderRadius: BorderRadius.circular(25)
+               ),
             child: Column(
               children: [
                 SizedBox(height: 12),
@@ -56,7 +51,7 @@ class _SuraDetailsScreenState extends State<SuraDetailsScreen> {
                   children: [
                     Text(
                       'سورة ${model.name}',
-                      style: GoogleFonts.inter(fontSize: 30),
+                      style: Theme.of(context).textTheme.bodyMedium
                     ),
                     SizedBox(
                       width: 12,
@@ -64,12 +59,14 @@ class _SuraDetailsScreenState extends State<SuraDetailsScreen> {
                     Icon(
                       Icons.play_circle,
                       size: 27,
-                      color: Color(0xFF242424),
+                      color: AppTheme.blackColor,
                     ),
                   ],
                 ),
-                Divider(indent: 50,endIndent: 50,
-                  color: Color(0xFFB7935F),
+                Divider(
+                  indent: 50,
+                  endIndent: 50,
+                  color: AppTheme.primaryColor,
                 ),
                 Expanded(
                   child: ListView.builder(
