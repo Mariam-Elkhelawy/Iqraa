@@ -37,13 +37,12 @@ class _SuraDetailsScreenState extends State<SuraDetailsScreen> {
         ),
         body: Padding(
           padding: const EdgeInsets.all(16.0),
-          child: Card(
+          child: Container(
             margin: EdgeInsets.all(20),
-            color: Color(0xFFF8F8F8).withOpacity(.8),
-            shape: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(25),
-              borderSide: BorderSide(color: Colors.transparent),
-            ),
+            decoration:BoxDecoration(
+                color: Color(0xFFF8F8F8).withOpacity(.8),
+              borderRadius: BorderRadius.circular(25)
+               ),
             child: Column(
               children: [
                 SizedBox(height: 12),

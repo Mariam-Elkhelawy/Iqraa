@@ -244,37 +244,72 @@ class QuranTab extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Align(
-          alignment: Alignment.center,
-          child: Image.asset('assets/images/ic_quran_top.png'),
+        Image.asset(
+          'assets/images/ic_quran_top.png',
+          height: MediaQuery.of(context).size.height * .3,
         ),
         Divider(
           thickness: 3,
           color: AppTheme.primaryColor,
         ),
-        Text('اسم السورة', style: Theme.of(context).textTheme.bodyLarge),
+        Row(
+          children: [
+            Expanded(
+                child: Text('عدد الآيات',
+                    style: Theme.of(context).textTheme.bodyLarge,
+                    textAlign: TextAlign.center)),
+            Container(
+              height: 35,
+              width: 3,
+              color: AppTheme.primaryColor,
+            ),
+            Expanded(
+                child: Text(
+              'اسم السورة',
+              style: Theme.of(context).textTheme.bodyLarge,
+              textAlign: TextAlign.center,
+            )),
+          ],
+        ),
         Divider(
           thickness: 3,
           color: AppTheme.primaryColor,
         ),
         Expanded(
-          child: ListView.separated(
+          child: ListView.builder(
               itemBuilder: (context, index) {
-                return InkWell(
-                  onTap: () {
-                    Navigator.pushNamed(
-                      context,
-                      SuraDetailsScreen.routeName,
-                      arguments:
-                          SuraModel(name: suraNames[index], index: index),
-                    );
-                  },
-                  child: Text(suraNames[index],
-                      textAlign: TextAlign.center,
-                      style: Theme.of(context).textTheme.bodyMedium),
+                return Row(
+                  children: [
+                    Expanded(
+                      child: Text(versesNumber[index].toString(),
+                          textAlign: TextAlign.center,
+                          style: Theme.of(context).textTheme.bodyMedium),
+                    ),
+                  
+                    Container(
+                      height: 40,
+                      width: 3,
+                      color: AppTheme.primaryColor,
+                    ),
+                    Expanded(
+                      child: InkWell(
+                        onTap: () {
+                          Navigator.pushNamed(
+                            context,
+                            SuraDetailsScreen.routeName,
+                            arguments:
+                            SuraModel(name: suraNames[index], index: index),
+                          );
+                        },
+                        child: Text(suraNames[index],
+                            textAlign: TextAlign.center,
+                            style: Theme.of(context).textTheme.bodyMedium),
+                      ),
+                    ),
+                    
+                  ],
                 );
               },
-              separatorBuilder: (context, index) => SizedBox(height: 8),
               itemCount: suraNames.length),
         ),
       ],
