@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:islami_app/app_theme.dart';
-import 'package:islami_app/sura_model.dart';
+import 'package:islami_app/models/sura_model.dart';
 
 class SuraDetailsScreen extends StatefulWidget {
   SuraDetailsScreen({super.key});
@@ -74,7 +74,7 @@ class _SuraDetailsScreenState extends State<SuraDetailsScreen> {
                       return Text(
                         verses[index],
                         textAlign: TextAlign.center,
-                        style: GoogleFonts.inter(fontSize: 20),
+                        style: GoogleFonts.inter(fontSize: 20,color: AppTheme.blackColor),
                       );
                     },
                     itemCount: verses.length,
