@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:islami_app/app_theme.dart';
 import 'package:islami_app/sura_details.dart';
 import 'package:islami_app/models/sura_model.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+
 
 class QuranTab extends StatelessWidget {
   QuranTab({super.key});
@@ -242,6 +244,8 @@ class QuranTab extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var local = AppLocalizations.of(context)!;
+
     return Column(
       children: [
         Image.asset(
@@ -255,7 +259,7 @@ class QuranTab extends StatelessWidget {
         Row(
           children: [
             Expanded(
-                child: Text('عدد الآيات',
+                child: Text(local.versesNumber,
                     style: Theme.of(context).textTheme.bodyLarge,
                     textAlign: TextAlign.center)),
             Container(
@@ -265,7 +269,7 @@ class QuranTab extends StatelessWidget {
             ),
             Expanded(
                 child: Text(
-              'اسم السورة',
+              local.suraName,
               style: Theme.of(context).textTheme.bodyLarge,
               textAlign: TextAlign.center,
             )),

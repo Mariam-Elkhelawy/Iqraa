@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:islami_app/app_theme.dart';
 import 'package:islami_app/models/hadith_model.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+
 
 class HadithDetails extends StatelessWidget {
   const HadithDetails({super.key});
@@ -9,6 +11,8 @@ class HadithDetails extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var local = AppLocalizations.of(context)!;
+
     var model = ModalRoute.of(context)!.settings.arguments as HadithModel;
 
     return Container(
@@ -20,7 +24,7 @@ class HadithDetails extends StatelessWidget {
       ),
       child: Scaffold(
         appBar: AppBar(
-          title: Text('إسلامي'),
+          title: Text(local.islami),
         ),
         body: Padding(
           padding: const EdgeInsets.all(16.0),
@@ -28,7 +32,7 @@ class HadithDetails extends StatelessWidget {
             margin: EdgeInsets.all(20),
             decoration: BoxDecoration(
                 color: Color(0xFFF8F8F8).withOpacity(.8),
-                borderRadius: BorderRadius.circular(25)),
+                borderRadius: BorderRadius.circular(25),),
             child: Column(
               children: [
                 SizedBox(height: 12),

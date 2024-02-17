@@ -3,6 +3,8 @@ import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:islami_app/app_theme.dart';
 import 'package:islami_app/models/sura_model.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+
 
 class SuraDetailsScreen extends StatefulWidget {
   SuraDetailsScreen({super.key});
@@ -17,6 +19,8 @@ class _SuraDetailsScreenState extends State<SuraDetailsScreen> {
 
   @override
   Widget build(BuildContext context) {
+    var local = AppLocalizations.of(context)!;
+
     var model = ModalRoute.of(context)!.settings.arguments as SuraModel;
     if (verses.isEmpty) {
       loadFiles(model.index);
@@ -32,7 +36,7 @@ class _SuraDetailsScreenState extends State<SuraDetailsScreen> {
       child: Scaffold(
         appBar: AppBar(
           title: Text(
-            'إسلامي'
+           local.islami
           ),
         ),
         body: Padding(

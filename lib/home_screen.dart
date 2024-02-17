@@ -4,11 +4,11 @@ import 'package:islami_app/tabs/quran_tab.dart';
 import 'package:islami_app/tabs/radio_tab.dart';
 import 'package:islami_app/tabs/sebha_tab.dart';
 import 'package:islami_app/tabs/settings_tab.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class HomeScreen extends StatefulWidget {
   HomeScreen({super.key});
   static const String routeName = 'Home';
-
   @override
   State<HomeScreen> createState() => _HomeScreenState();
 }
@@ -18,6 +18,8 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
+    var local = AppLocalizations.of(context)!;
+
     return Container(
       decoration: BoxDecoration(
         image: DecorationImage(
@@ -26,7 +28,7 @@ class _HomeScreenState extends State<HomeScreen> {
         ),
       ),
       child: Scaffold(
-        appBar: AppBar(title: Text('إسلامي'),),
+        appBar: AppBar(title: Text(local.islami),),
         bottomNavigationBar: BottomNavigationBar(
          iconSize: 35,
           currentIndex: index,
@@ -36,25 +38,25 @@ class _HomeScreenState extends State<HomeScreen> {
           },
           items: [
             BottomNavigationBarItem(
-              label: 'الراديو',
+              label: local.radio,
               icon: ImageIcon(
                 AssetImage('assets/images/ic_radio.png'),
               ),
             ),
             BottomNavigationBarItem(
-              label: 'التسبيح',
+              label: local.sebha,
               icon: ImageIcon(
                 AssetImage('assets/images/ic_sebha.png'),
               ),
             ),
             BottomNavigationBarItem(
-              label: 'الاحاديث',
+              label: local.ahadeth,
               icon: ImageIcon(
                 AssetImage('assets/images/ic_ahadeth.png'),
               ),
             ),
             BottomNavigationBarItem(
-              label: 'القرآن',
+              label: local.quran,
               icon: ImageIcon(
                 AssetImage('assets/images/ic_quran.png'),
               ),
@@ -64,7 +66,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   Icons.settings,
                   size: 30,
                 ),
-                label: 'الاعدادات')
+                label:local.settings,)
           ],
         ),
         body: tabs[index],

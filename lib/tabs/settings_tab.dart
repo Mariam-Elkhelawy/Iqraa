@@ -1,17 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:islami_app/app_theme.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+
 
 class SettingsTab extends StatelessWidget {
   const SettingsTab({super.key});
 
   @override
   Widget build(BuildContext context) {
+    var local = AppLocalizations.of(context)!;
+
     return Padding(
       padding: const EdgeInsets.all(16),
       child: Column(crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            'Language',
+            local.language,
             style: Theme.of(context).textTheme.headlineLarge,
           ),
           Container(
@@ -24,14 +28,14 @@ class SettingsTab extends StatelessWidget {
                 ),
                 color: Colors.transparent),
             child: Text(
-              'Arabic',
+              local.arabic,
               style: Theme.of(context).textTheme.bodyLarge,
             ),
           ),
           SizedBox(height: MediaQuery.of(context).size.height*.04,),
 
           Text(
-            'Theme',
+            local.theme,
             style: Theme.of(context).textTheme.headlineLarge,
           ),
           Container(
@@ -44,7 +48,7 @@ class SettingsTab extends StatelessWidget {
                 ),
                 color: Colors.transparent),
             child: Text(
-              'Light',
+              local.light,
               style: Theme.of(context).textTheme.bodyLarge,
             ),
           ),
