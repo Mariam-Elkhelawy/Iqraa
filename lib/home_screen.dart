@@ -50,7 +50,7 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
             ),
             BottomNavigationBarItem(
-              label: local.ahadeth,
+              label: local.ahadith,
               icon: ImageIcon(
                 AssetImage('assets/images/ic_ahadeth.png'),
               ),

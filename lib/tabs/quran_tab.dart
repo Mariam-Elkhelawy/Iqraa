@@ -4,7 +4,6 @@ import 'package:islami_app/sura_details.dart';
 import 'package:islami_app/models/sura_model.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
-
 class QuranTab extends StatelessWidget {
   QuranTab({super.key});
 
@@ -259,20 +258,21 @@ class QuranTab extends StatelessWidget {
         Row(
           children: [
             Expanded(
-                child: Text(local.versesNumber,
-                    style: Theme.of(context).textTheme.bodyLarge,
-                    textAlign: TextAlign.center)),
+              child: Text(
+                local.suraName,
+                style: Theme.of(context).textTheme.bodyLarge,
+                textAlign: TextAlign.center,
+              ),
+            ),
             Container(
               height: 35,
               width: 3,
               color: AppTheme.primaryColor,
             ),
             Expanded(
-                child: Text(
-              local.suraName,
-              style: Theme.of(context).textTheme.bodyLarge,
-              textAlign: TextAlign.center,
-            )),
+                child: Text(local.versesNumber,
+                    style: Theme.of(context).textTheme.bodyLarge,
+                    textAlign: TextAlign.center)),
           ],
         ),
         Divider(
@@ -285,24 +285,13 @@ class QuranTab extends StatelessWidget {
                 return Row(
                   children: [
                     Expanded(
-                      child: Text(versesNumber[index].toString(),
-                          textAlign: TextAlign.center,
-                          style: Theme.of(context).textTheme.bodyMedium),
-                    ),
-                  
-                    Container(
-                      height: 40,
-                      width: 3,
-                      color: AppTheme.primaryColor,
-                    ),
-                    Expanded(
                       child: InkWell(
                         onTap: () {
                           Navigator.pushNamed(
                             context,
                             SuraDetailsScreen.routeName,
                             arguments:
-                            SuraModel(name: suraNames[index], index: index),
+                                SuraModel(name: suraNames[index], index: index),
                           );
                         },
                         child: Text(suraNames[index],
@@ -310,7 +299,16 @@ class QuranTab extends StatelessWidget {
                             style: Theme.of(context).textTheme.bodyMedium),
                       ),
                     ),
-                    
+                    Container(
+                      height: 40,
+                      width: 3,
+                      color: AppTheme.primaryColor,
+                    ),
+                    Expanded(
+                      child: Text(versesNumber[index].toString(),
+                          textAlign: TextAlign.center,
+                          style: Theme.of(context).textTheme.bodyMedium),
+                    ),
                   ],
                 );
               },

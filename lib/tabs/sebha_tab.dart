@@ -10,7 +10,7 @@ class SebhaTab extends StatefulWidget {
 }
 
 class _SebhaTabState extends State<SebhaTab> {
-  int counter = 0;
+  int counter = 1;
   int index = 0;
   List<String> azkar = [
     'سبحان الله',
@@ -29,9 +29,9 @@ class _SebhaTabState extends State<SebhaTab> {
           InkWell(
               onTap: () {
                 counter++;
-                if (counter == 33) {
+                if (counter == 34) {
                   index++;
-                  counter = 0;
+                  counter = 1;
 
                   if (index == azkar.length) {
                     index = 0;
