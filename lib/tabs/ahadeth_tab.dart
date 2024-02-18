@@ -3,6 +3,7 @@ import 'package:islami_app/app_theme.dart';
 import 'package:islami_app/hadith_details.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:islami_app/providers/ahadith_details_provider.dart';
+import 'package:islami_app/providers/my_provider.dart';
 import 'package:provider/provider.dart';
 
 class AhadithTab extends StatefulWidget {
@@ -21,12 +22,16 @@ class _AhadithTabState extends State<AhadithTab> {
       create: (context) => AhadithDetailsProvider()..LoadHadithFile(),
       builder: (context, child) {
         var provider = Provider.of<AhadithDetailsProvider>(context);
+        var providerC = Provider.of<MyProvider>(context);
+
         return Column(
           children: [
             Image.asset('assets/images/ic_hadith_top.png'),
             Divider(
               thickness: 3,
-              color: AppTheme.primaryColor,
+              color: providerC.mode == ThemeMode.light
+                  ? AppTheme.primaryColor
+                  : AppTheme.yellowColor,
             ),
             Text(
               local.ahadith,
@@ -35,7 +40,9 @@ class _AhadithTabState extends State<AhadithTab> {
             ),
             Divider(
               thickness: 3,
-              color: AppTheme.primaryColor,
+              color: providerC.mode == ThemeMode.light
+                  ? AppTheme.primaryColor
+                  : AppTheme.yellowColor,
             ),
             Expanded(
                 child: ListView.separated(

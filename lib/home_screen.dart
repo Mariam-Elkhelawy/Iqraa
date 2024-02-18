@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:islami_app/providers/my_provider.dart';
 import 'package:islami_app/tabs/ahadeth_tab.dart';
 import 'package:islami_app/tabs/quran_tab.dart';
 import 'package:islami_app/tabs/radio_tab.dart';
 import 'package:islami_app/tabs/sebha_tab.dart';
 import 'package:islami_app/tabs/settings_tab.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:provider/provider.dart';
 
 class HomeScreen extends StatefulWidget {
   HomeScreen({super.key});
@@ -19,18 +21,21 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     var local = AppLocalizations.of(context)!;
+    var imageProvider = Provider.of<MyProvider>(context);
 
     return Container(
       decoration: BoxDecoration(
         image: DecorationImage(
           fit: BoxFit.cover,
-          image: AssetImage('assets/images/bg.png'),
+          image: AssetImage(imageProvider.getBackgroundImage()),
         ),
       ),
       child: Scaffold(
-        appBar: AppBar(title: Text(local.islami),),
+        appBar: AppBar(
+          title: Text(local.islami),
+        ),
         bottomNavigationBar: BottomNavigationBar(
-         iconSize: 35,
+          iconSize: 35,
           currentIndex: index,
           onTap: (value) {
             index = value;
@@ -62,11 +67,12 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
             ),
             BottomNavigationBarItem(
-                icon: Icon(
-                  Icons.settings,
-                  size: 30,
-                ),
-                label:local.settings,)
+              icon: Icon(
+                Icons.settings,
+                size: 30,
+              ),
+              label: local.settings,
+            )
           ],
         ),
         body: tabs[index],

@@ -43,7 +43,7 @@ class SettingsTab extends StatelessWidget {
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(24),
                     border: Border.all(
-                      color: AppTheme.primaryColor,
+                      color: provider.mode==ThemeMode.light?AppTheme.primaryColor:AppTheme.yellowColor,
                     ),
                     color: Colors.transparent),
                 child: provider.languageCode == 'ar'
@@ -79,11 +79,11 @@ class SettingsTab extends StatelessWidget {
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(24),
                   border: Border.all(
-                    color: AppTheme.primaryColor,
+                    color: provider.mode==ThemeMode.light?AppTheme.primaryColor:AppTheme.yellowColor,
                   ),
                   color: Colors.transparent),
               child: Text(
-                local.light,
+                provider.mode == ThemeMode.light ? local.light : local.dark,
                 style: theme.textTheme.bodyLarge,
               ),
             ),

@@ -13,7 +13,9 @@ class ThemeBottomSheet extends StatelessWidget {
   Widget build(BuildContext context) {
     var local = AppLocalizations.of(context)!;
     var provider = Provider.of<MyProvider>(context);
-      return Padding(
+    var theme = Theme.of(context);
+
+    return Padding(
       padding: const EdgeInsets.all(16),
       child: Column(
         children: [
@@ -25,21 +27,23 @@ class ThemeBottomSheet extends StatelessWidget {
                   provider.changeThemeMode(ThemeMode.light);
                 },
                 child: Text(local.light,
-                    style: GoogleFonts.elMessiri(
-                      fontSize: 28,
-                      color: provider.mode == ThemeMode.light
-                          ? AppTheme.primaryColor
-                          : AppTheme.blackColor,
-                    )),
+                    style: provider.mode == ThemeMode.light
+                        ? theme.textTheme.displayLarge
+                        : theme.textTheme.displaySmall),
               ),
-              if ( provider.mode == ThemeMode.light) ...[
+              if (provider.mode == ThemeMode.light) ...[
                 Icon(
                   Icons.done,
                   size: 30,
-                  color: AppTheme.primaryColor,
+                  color: provider.mode == ThemeMode.light
+                      ? AppTheme.primaryColor
+                      : AppTheme.yellowColor,
                 )
               ]
             ],
+          ),
+          SizedBox(
+            height: 14,
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -49,18 +53,17 @@ class ThemeBottomSheet extends StatelessWidget {
                   provider.changeThemeMode(ThemeMode.dark);
                 },
                 child: Text(local.dark,
-                    style: GoogleFonts.elMessiri(
-                      fontSize: 28,
-                      color: provider.mode == ThemeMode.dark
-                          ? AppTheme.primaryColor
-                          : AppTheme.blackColor,
-                    )),
+                    style: provider.mode == ThemeMode.dark
+                        ? theme.textTheme.displayLarge
+                        : theme.textTheme.displaySmall),
               ),
               if (provider.mode == ThemeMode.dark) ...[
                 Icon(
                   Icons.done,
                   size: 30,
-                  color: AppTheme.primaryColor,
+                  color: provider.mode == ThemeMode.light
+                      ? AppTheme.primaryColor
+                      : AppTheme.yellowColor,
                 )
               ]
             ],
@@ -68,6 +71,5 @@ class ThemeBottomSheet extends StatelessWidget {
         ],
       ),
     );
-
   }
 }

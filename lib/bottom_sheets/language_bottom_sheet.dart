@@ -11,6 +11,7 @@ class LanguageBottomSheet extends StatelessWidget {
   Widget build(BuildContext context) {
     var local = AppLocalizations.of(context)!;
     var provider = Provider.of<MyProvider>(context);
+    var theme = Theme.of(context);
 
     return Padding(
       padding: const EdgeInsets.all(16),
@@ -24,22 +25,20 @@ class LanguageBottomSheet extends StatelessWidget {
                   provider.changeLanguageCode('en');
                 },
                 child: Text(local.english,
-                    style: GoogleFonts.elMessiri(
-                      fontSize: 28,
-                      color: provider.languageCode == 'en'
-                          ? AppTheme.primaryColor
-                          : AppTheme.blackColor,
-                    )),
+                    style: provider.languageCode == 'en'
+                        ? theme.textTheme.displayLarge
+                        : theme.textTheme.displaySmall),
               ),
               if (provider.languageCode == 'en') ...[
                 Icon(
                   Icons.done,
                   size: 30,
-                  color: AppTheme.primaryColor,
+                  color:provider.mode==ThemeMode.light? AppTheme.primaryColor:AppTheme.yellowColor,
                 )
               ]
             ],
           ),
+          SizedBox(height: 14,),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
@@ -48,18 +47,15 @@ class LanguageBottomSheet extends StatelessWidget {
                   provider.changeLanguageCode('ar');
                 },
                 child: Text(local.arabic,
-                    style: GoogleFonts.elMessiri(
-                      fontSize: 28,
-                      color: provider.languageCode == 'ar'
-                          ? AppTheme.primaryColor
-                          : AppTheme.blackColor,
-                    )),
+                    style: provider.languageCode == 'ar'
+                        ? theme.textTheme.displayLarge
+                        : theme.textTheme.displaySmall),
               ),
               if (provider.languageCode == 'ar') ...[
                 Icon(
                   Icons.done,
                   size: 30,
-                  color: AppTheme.primaryColor,
+                  color:provider.mode==ThemeMode.light? AppTheme.primaryColor:AppTheme.yellowColor,
                 )
               ]
             ],
