@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:islami_app/app_theme.dart';
 import 'package:islami_app/sura_details.dart';
-import 'package:islami_app/sura_model.dart';
+import 'package:islami_app/models/sura_model.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:provider/provider.dart';
+
+import '../providers/my_provider.dart';
 
 class QuranTab extends StatelessWidget {
   QuranTab({super.key});
@@ -242,6 +246,9 @@ class QuranTab extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var local = AppLocalizations.of(context)!;
+    var provider = Provider.of<MyProvider>(context);
+
     return Column(
       children: [
         Image.asset(
@@ -250,30 +257,37 @@ class QuranTab extends StatelessWidget {
         ),
         Divider(
           thickness: 3,
-          color: AppTheme.primaryColor,
+          color: provider.mode == ThemeMode.light
+              ? AppTheme.primaryColor
+              : AppTheme.yellowColor,
         ),
         Row(
           children: [
             Expanded(
-                child: Text('عدد الآيات',
-                    style: Theme.of(context).textTheme.bodyLarge,
-                    textAlign: TextAlign.center)),
+              child: Text(
+                local.suraName,
+                style: Theme.of(context).textTheme.bodyLarge,
+                textAlign: TextAlign.center,
+              ),
+            ),
             Container(
               height: 35,
               width: 3,
-              color: AppTheme.primaryColor,
+              color: provider.mode == ThemeMode.light
+                  ? AppTheme.primaryColor
+                  : AppTheme.yellowColor,
             ),
             Expanded(
-                child: Text(
-              'اسم السورة',
-              style: Theme.of(context).textTheme.bodyLarge,
-              textAlign: TextAlign.center,
-            )),
+                child: Text(local.versesNumber,
+                    style: Theme.of(context).textTheme.bodyLarge,
+                    textAlign: TextAlign.center)),
           ],
         ),
         Divider(
           thickness: 3,
-          color: AppTheme.primaryColor,
+          color: provider.mode == ThemeMode.light
+              ? AppTheme.primaryColor
+              : AppTheme.yellowColor,
         ),
         Expanded(
           child: ListView.builder(
@@ -281,24 +295,13 @@ class QuranTab extends StatelessWidget {
                 return Row(
                   children: [
                     Expanded(
-                      child: Text(versesNumber[index].toString(),
-                          textAlign: TextAlign.center,
-                          style: Theme.of(context).textTheme.bodyMedium),
-                    ),
-                  
-                    Container(
-                      height: 40,
-                      width: 3,
-                      color: AppTheme.primaryColor,
-                    ),
-                    Expanded(
                       child: InkWell(
                         onTap: () {
                           Navigator.pushNamed(
                             context,
                             SuraDetailsScreen.routeName,
                             arguments:
-                            SuraModel(name: suraNames[index], index: index),
+                                SuraModel(name: suraNames[index], index: index),
                           );
                         },
                         child: Text(suraNames[index],
@@ -306,7 +309,18 @@ class QuranTab extends StatelessWidget {
                             style: Theme.of(context).textTheme.bodyMedium),
                       ),
                     ),
-                    
+                    Container(
+                      height: 40,
+                      width: 3,
+                      color: provider.mode == ThemeMode.light
+                          ? AppTheme.primaryColor
+                          : AppTheme.yellowColor,
+                    ),
+                    Expanded(
+                      child: Text(versesNumber[index].toString(),
+                          textAlign: TextAlign.center,
+                          style: Theme.of(context).textTheme.bodyMedium),
+                    ),
                   ],
                 );
               },

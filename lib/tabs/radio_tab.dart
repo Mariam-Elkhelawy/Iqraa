@@ -1,11 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:islami_app/app_theme.dart';
+import 'package:islami_app/providers/my_provider.dart';
+import 'package:provider/provider.dart';
 
 class RadioTab extends StatelessWidget {
   const RadioTab({super.key});
 
   @override
   Widget build(BuildContext context) {
+    var provider = Provider.of<MyProvider>(context);
+
     return Column(
       children: [
         Padding(
@@ -22,17 +26,23 @@ class RadioTab extends StatelessWidget {
           children: [
             Icon(
               Icons.skip_previous,
-              color: AppTheme.primaryColor,
+              color: provider.mode == ThemeMode.light
+                  ? AppTheme.primaryColor
+                  : AppTheme.yellowColor,
               size: 45,
             ),
             Icon(
               Icons.play_arrow,
-              color: AppTheme.primaryColor,
+              color: provider.mode == ThemeMode.light
+                  ? AppTheme.primaryColor
+                  : AppTheme.yellowColor,
               size: 50,
             ),
             Icon(
               Icons.skip_next,
-              color: AppTheme.primaryColor,
+              color: provider.mode == ThemeMode.light
+                  ? AppTheme.primaryColor
+                  : AppTheme.yellowColor,
               size: 45,
             ),
           ],
