@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:islami_app/app_theme.dart';
-import 'package:islami_app/providers/my_provider.dart';
+import 'package:iqraa_app/app_theme.dart';
+import 'package:iqraa_app/providers/my_provider.dart';
 import 'package:provider/provider.dart';
 
 class RadioTab extends StatelessWidget {
@@ -13,14 +13,14 @@ class RadioTab extends StatelessWidget {
     return Column(
       children: [
         Padding(
-          padding: const EdgeInsets.only(top: 115, bottom: 50),
+          padding: const EdgeInsets.only(top: 115, bottom: 50) ,
           child: Image.asset('assets/images/ic_radio_tab.png'),
         ),
         Text(
           'إذاعة القرآن الكريم',
           style: Theme.of(context).textTheme.bodyLarge,
         ),
-        SizedBox(height: 60),
+        const SizedBox(height: 60),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [

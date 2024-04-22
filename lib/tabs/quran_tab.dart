@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:islami_app/app_theme.dart';
-import 'package:islami_app/sura_details.dart';
-import 'package:islami_app/models/sura_model.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:provider/provider.dart';
 
+import '../app_theme.dart';
+import '../models/sura_model.dart';
 import '../providers/my_provider.dart';
+import '../sura_details.dart';
 
 class QuranTab extends StatelessWidget {
   QuranTab({super.key});

@@ -1,8 +1,9 @@
 import 'package:another_flutter_splash_screen/another_flutter_splash_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:islami_app/home_screen.dart';
-import 'package:islami_app/providers/my_provider.dart';
+import 'package:iqraa_app/home_screen.dart';
 import 'package:provider/provider.dart';
+
+import 'providers/my_provider.dart';
 
 class SplashScreen extends StatelessWidget {
   const SplashScreen({super.key});
@@ -13,16 +14,16 @@ class SplashScreen extends StatelessWidget {
     var provider = Provider.of<MyProvider>(context);
 
     return FlutterSplashScreen.fadeIn(
-      duration: Duration(seconds: 6),
+      duration: const Duration(seconds: 3),
       backgroundImage: provider.mode == ThemeMode.light
-          ? Image(
+          ? const Image(
               image: AssetImage('assets/images/splash.png'),
             )
-          : Image(
+          : const Image(
               image: AssetImage('assets/images/splash_dark.png'),
             ),
-      nextScreen: HomeScreen(),
-      childWidget: SizedBox(),
+      nextScreen: const HomeScreen(),
+      childWidget: const SizedBox(),
     );
   }
 }

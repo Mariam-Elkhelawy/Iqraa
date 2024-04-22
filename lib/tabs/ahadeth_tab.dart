@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:islami_app/app_theme.dart';
-import 'package:islami_app/hadith_details.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:islami_app/providers/ahadith_details_provider.dart';
-import 'package:islami_app/providers/my_provider.dart';
 import 'package:provider/provider.dart';
+
+import '../app_theme.dart';
+import '../hadith_details.dart';
+import '../providers/ahadith_details_provider.dart';
+import '../providers/my_provider.dart';
 
 class AhadithTab extends StatefulWidget {
   const AhadithTab({super.key});
@@ -19,7 +20,7 @@ class _AhadithTabState extends State<AhadithTab> {
     var local = AppLocalizations.of(context)!;
 
     return ChangeNotifierProvider<AhadithDetailsProvider>(
-      create: (context) => AhadithDetailsProvider()..LoadHadithFile(),
+      create: (context) => AhadithDetailsProvider()..loadHadithFile(),
       builder: (context, child) {
         var provider = Provider.of<AhadithDetailsProvider>(context);
         var providerC = Provider.of<MyProvider>(context);
@@ -46,7 +47,7 @@ class _AhadithTabState extends State<AhadithTab> {
             ),
             Expanded(
                 child: ListView.separated(
-              separatorBuilder: (context, index) => SizedBox(height: 10),
+              separatorBuilder: (context, index) => const SizedBox(height: 10),
               itemBuilder: (context, index) {
                 return InkWell(
                   onTap: () {

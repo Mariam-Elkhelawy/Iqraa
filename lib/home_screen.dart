@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:islami_app/providers/my_provider.dart';
-import 'package:islami_app/tabs/ahadeth_tab.dart';
-import 'package:islami_app/tabs/quran_tab.dart';
-import 'package:islami_app/tabs/radio_tab.dart';
-import 'package:islami_app/tabs/sebha_tab.dart';
-import 'package:islami_app/tabs/settings_tab.dart';
+import 'package:iqraa_app/providers/my_provider.dart';
+import 'package:iqraa_app/tabs/ahadeth_tab.dart';
+import 'package:iqraa_app/tabs/quran_tab.dart';
+import 'package:iqraa_app/tabs/radio_tab.dart';
+import 'package:iqraa_app/tabs/sebha_tab.dart';
+import 'package:iqraa_app/tabs/settings_tab.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:provider/provider.dart';
 
 class HomeScreen extends StatefulWidget {
-  HomeScreen({super.key});
+  const HomeScreen({super.key});
   static const String routeName = 'Home';
   @override
   State<HomeScreen> createState() => _HomeScreenState();
@@ -44,30 +44,30 @@ class _HomeScreenState extends State<HomeScreen> {
           items: [
             BottomNavigationBarItem(
               label: local.radio,
-              icon: ImageIcon(
+              icon: const ImageIcon(
                 AssetImage('assets/images/ic_radio.png'),
               ),
             ),
             BottomNavigationBarItem(
               label: local.sebha,
-              icon: ImageIcon(
+              icon: const ImageIcon(
                 AssetImage('assets/images/ic_sebha.png'),
               ),
             ),
             BottomNavigationBarItem(
               label: local.ahadith,
-              icon: ImageIcon(
+              icon: const ImageIcon(
                 AssetImage('assets/images/ic_ahadeth.png'),
               ),
             ),
             BottomNavigationBarItem(
               label: local.quran,
-              icon: ImageIcon(
+              icon: const ImageIcon(
                 AssetImage('assets/images/ic_quran.png'),
               ),
             ),
             BottomNavigationBarItem(
-              icon: Icon(
+              icon: const Icon(
                 Icons.settings,
                 size: 30,
               ),
@@ -82,9 +82,9 @@ class _HomeScreenState extends State<HomeScreen> {
 }
 
 List<Widget> tabs = [
-  RadioTab(),
-  SebhaTab(),
-  AhadithTab(),
+  const RadioTab(),
+  const SebhaTab(),
+  const AhadithTab(),
   QuranTab(),
-  SettingsTab(),
+  const SettingsTab(),
 ];
