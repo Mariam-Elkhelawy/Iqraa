@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:islami_app/app_theme.dart';
-import 'package:islami_app/models/hadith_model.dart';
+import 'package:iqraa_app/providers/my_provider.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:islami_app/providers/my_provider.dart';
 import 'package:provider/provider.dart';
+
+import 'app_theme.dart';
+import 'models/hadith_model.dart';
 
 class HadithDetails extends StatelessWidget {
   const HadithDetails({super.key});
@@ -30,18 +31,18 @@ class HadithDetails extends StatelessWidget {
         body: Padding(
           padding: const EdgeInsets.all(16.0),
           child: Container(
-            margin: EdgeInsets.all(20),
+            margin: const EdgeInsets.all(20),
             decoration: BoxDecoration(
               color: provider.mode == ThemeMode.light
-                  ? Color(0xFFF8F8F8).withOpacity(.8)
-                  : Color(0xFF141A2E),
+                  ? const Color(0xFFF8F8F8).withOpacity(.8)
+                  : const Color(0xFF141A2E),
               borderRadius: BorderRadius.circular(25),
             ),
             child: Column(
               children: [
-                SizedBox(height: 20),
+                const SizedBox(height: 20),
                 Text(
-                  '${model.title}',
+                  model.title,
                   style: GoogleFonts.inter(
                       fontSize: 25,
                       fontWeight: FontWeight.w400,
@@ -69,7 +70,7 @@ class HadithDetails extends StatelessWidget {
                             color: provider.mode == ThemeMode.light
                                 ? AppTheme.blackColor
                                 : AppTheme.yellowColor,
-                          ));
+                          ),);
                     },
                     itemCount: model.content.length,
                   ),

@@ -5,7 +5,7 @@ import '../models/hadith_model.dart';
 class AhadithDetailsProvider extends ChangeNotifier {
   List<HadithModel> ahadithData = [];
 
-  LoadHadithFile() {
+ void loadHadithFile() {
     rootBundle.loadString('assets/files/ahadeth.txt').then((hadithFile) {
       List<String> ahadith = hadithFile.split('#');
       for (int i = 0; i < ahadith.length; i++) {

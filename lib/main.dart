@@ -1,36 +1,41 @@
 import 'package:flutter/material.dart';
-import 'package:islami_app/app_theme.dart';
-import 'package:islami_app/hadith_details.dart';
-import 'package:islami_app/home_screen.dart';
-import 'package:islami_app/providers/my_provider.dart';
-import 'package:islami_app/splash_screen.dart';
-import 'package:islami_app/sura_details.dart';
+import 'package:iqraa_app/providers/my_provider.dart';
+import 'package:iqraa_app/splash_screen.dart';
+import 'package:iqraa_app/sura_details.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:provider/provider.dart';
 
+import 'app_theme.dart';
+import 'hadith_details.dart';
+import 'home_screen.dart';
+
 void main() {
-  runApp(ChangeNotifierProvider<MyProvider>(
-      create: (context) => MyProvider(), child: const IslamicApp()));
+  runApp(
+    ChangeNotifierProvider<MyProvider>(
+      create: (context) => MyProvider(),
+      child: const IqraaApp(),
+    ),
+  );
 }
 
-class IslamicApp extends StatelessWidget {
-  const IslamicApp({super.key});
+class IqraaApp extends StatelessWidget {
+  const IqraaApp({super.key});
 
   @override
   Widget build(BuildContext context) {
     var provider = Provider.of<MyProvider>(context);
     return MaterialApp(
       locale: Locale(provider.languageCode),
-      localizationsDelegates: [
-        AppLocalizations.delegate, // Add this line
+      localizationsDelegates: const [
+        AppLocalizations.delegate,
         GlobalMaterialLocalizations.delegate,
         GlobalWidgetsLocalizations.delegate,
         GlobalCupertinoLocalizations.delegate,
       ],
-      supportedLocales: [
-        Locale('en'), // English
-        Locale('ar'), // Spanish
+      supportedLocales: const [
+        Locale('en'),
+        Locale('ar'),
       ],
       themeMode: provider.mode,
       theme: AppTheme.lightTheme,
@@ -38,10 +43,10 @@ class IslamicApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       initialRoute: SplashScreen.routeName,
       routes: {
-        SplashScreen.routeName: (context) => SplashScreen(),
-        HomeScreen.routeName: (context) => HomeScreen(),
-        SuraDetailsScreen.routeName: (context) => SuraDetailsScreen(),
-        HadithDetails.routeName: (context) => HadithDetails(),
+        SplashScreen.routeName: (context) => const SplashScreen(),
+        HomeScreen.routeName: (context) => const HomeScreen(),
+        SuraDetailsScreen.routeName: (context) => const SuraDetailsScreen(),
+        HadithDetails.routeName: (context) => const HadithDetails(),
       },
     );
   }

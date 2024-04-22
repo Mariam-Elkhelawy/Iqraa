@@ -1,4 +1,4 @@
-name: islami_app
+name: iqraa_app
 description: "A new Flutter project."
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
@@ -40,6 +40,8 @@ dependencies:
   another_flutter_splash_screen: ^1.2.0
   google_fonts: ^6.1.0
   provider: ^6.1.1
+  flutter_screenutil: ^5.9.0
+
 
 
 

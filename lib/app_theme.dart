@@ -27,7 +27,7 @@ class AppTheme {
       bodyMedium: GoogleFonts.inter(
           fontSize: 25, color: blackColor, fontWeight: FontWeight.w400),
     ),
-    bottomNavigationBarTheme: BottomNavigationBarThemeData(
+    bottomNavigationBarTheme: const BottomNavigationBarThemeData(
       backgroundColor: primaryColor,
       type: BottomNavigationBarType.fixed,
       showSelectedLabels: true,
@@ -68,7 +68,7 @@ class AppTheme {
       bodyMedium: GoogleFonts.inter(
           fontSize: 25, color: whiteColor, fontWeight: FontWeight.w400),
     ),
-    bottomNavigationBarTheme: BottomNavigationBarThemeData(
+    bottomNavigationBarTheme: const BottomNavigationBarThemeData(
       backgroundColor: primaryDarkColor,
       type: BottomNavigationBarType.fixed,
       showSelectedLabels: true,
@@ -79,7 +79,7 @@ class AppTheme {
       elevation: 0,
     ),
     appBarTheme: AppBarTheme(
-      iconTheme: IconThemeData(color: Colors.white),
+      iconTheme: const IconThemeData(color: Colors.white),
       backgroundColor: Colors.transparent,
       centerTitle: true,
       elevation: 0,

@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:islami_app/app_theme.dart';
+import 'package:iqraa_app/app_theme.dart';
 import 'package:provider/provider.dart';
 
 import '../providers/my_provider.dart';
 
 class SebhaTab extends StatefulWidget {
-  SebhaTab({super.key});
+  const SebhaTab({super.key});
 
   @override
   State<SebhaTab> createState() => _SebhaTabState();
@@ -61,7 +61,7 @@ class _SebhaTabState extends State<SebhaTab> {
               borderRadius: BorderRadius.circular(25),
               color: provider.mode == ThemeMode.light
                   ? AppTheme.primaryColor.withOpacity(.57)
-                  : Color(0xFF141A2E),
+                  : const Color(0xFF141A2E),
             ),
             child: Center(
               child: Text(
@@ -82,12 +82,12 @@ class _SebhaTabState extends State<SebhaTab> {
             ),
             child: Center(
               child: Text(
-                '${azkar[index]}',
+                azkar[index],
                 style: GoogleFonts.inter(
                   fontSize: 25,
                   color: provider.mode == ThemeMode.light
                       ? Colors.white
-                      : Color(0xFF0F1424),
+                      : const Color(0xFF0F1424),
                 ),
               ),
             ),

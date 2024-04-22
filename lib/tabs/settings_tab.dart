@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:islami_app/app_theme.dart';
+import 'package:iqraa_app/bottom_sheets/language_bottom_sheet.dart';
+import 'package:iqraa_app/bottom_sheets/theme_bottom_sheet.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:islami_app/bottom_sheets/language_bottom_sheet.dart';
-import 'package:islami_app/bottom_sheets/theme_bottom_sheet.dart';
 import 'package:provider/provider.dart';
 
+import '../app_theme.dart';
 import '../providers/my_provider.dart';
 
 class SettingsTab extends StatelessWidget {
@@ -28,22 +28,25 @@ class SettingsTab extends StatelessWidget {
           InkWell(
             onTap: () {
               showModalBottomSheet(
-                  isScrollControlled: true,
-                  context: context,
-                  builder: (context) {
-                    return Container(
-                      height: MediaQuery.of(context).size.height * .72,
-                      child: LanguageBottomSheet(),
-                    );
-                  });
+                isScrollControlled: true,
+                context: context,
+                builder: (context) {
+                  return SizedBox(
+                    height: MediaQuery.of(context).size.height * .72,
+                    child: const LanguageBottomSheet(),
+                  );
+                },
+              );
             },
             child: Container(
                 width: double.infinity,
-                padding: EdgeInsets.all(12),
+                padding: const EdgeInsets.all(12),
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(24),
                     border: Border.all(
-                      color: provider.mode==ThemeMode.light?AppTheme.primaryColor:AppTheme.yellowColor,
+                      color: provider.mode == ThemeMode.light
+                          ? AppTheme.primaryColor
+                          : AppTheme.yellowColor,
                     ),
                     color: Colors.transparent),
                 child: provider.languageCode == 'ar'
@@ -64,22 +67,24 @@ class SettingsTab extends StatelessWidget {
           InkWell(
             onTap: () {
               showModalBottomSheet(
-                  isScrollControlled: true,
-                  context: context,
-                  builder: (context) {
-                    return Container(
-                      height: MediaQuery.of(context).size.height * .72,
-                      child: ThemeBottomSheet(),
-                    );
-                  });
+                context: context,
+                builder: (context) {
+                  return SizedBox(
+                    height: MediaQuery.of(context).size.height * .72,
+                    child: const ThemeBottomSheet(),
+                  );
+                },
+              );
             },
             child: Container(
               width: double.infinity,
-              padding: EdgeInsets.all(12),
+              padding: const EdgeInsets.all(12),
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(24),
                   border: Border.all(
-                    color: provider.mode==ThemeMode.light?AppTheme.primaryColor:AppTheme.yellowColor,
+                    color: provider.mode == ThemeMode.light
+                        ? AppTheme.primaryColor
+                        : AppTheme.yellowColor,
                   ),
                   color: Colors.transparent),
               child: Text(
