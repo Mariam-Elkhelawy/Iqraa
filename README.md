@@ -1,5 +1,6 @@
 # Iqraa_app
 Welcome to the IQRAA App repository! This app is your digital companion for enhancing your Islamic lifestyle.
+
 Here's a brief overview of its features:
 
 📖 Quran Tab: Access the complete Quran suras.
