@@ -1,6 +1,11 @@
-# islami_app
-
-A new Flutter project.
+# Iqraa_app
+Welcome to the IQRAA App repository! This app is your digital companion for enhancing your Islamic lifestyle. Here's a brief overview of its features:
+Features:
+📖 Quran Tab: Access the complete Quran suras.
+📜 Ahadith Tab: Explore authentic Hadith collections.
+📻 Radio Tab: Listen to live Islamic radio stations worldwide for sermons, Quranic recitations, and discussions.
+💬 Sebha Tab: Keep track of daily dhikr and tasbih with a digital counter, customizable for your needs.
+⚙️ Settings Tab: Personalize your experience with language and theme.
 
 ## Getting Started
 
