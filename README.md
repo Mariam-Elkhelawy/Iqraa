@@ -1,27 +1,33 @@
-# Iqraa_app
-Welcome to the IQRAA App repository! This app is your digital companion for enhancing your Islamic lifestyle.
+# 🕌 Iqraa App
 
-Here's a brief overview of its features:
+## Features
 
-📖 Quran Tab: Access the complete Quran suras.
 
-📜 Ahadith Tab: Explore authentic Hadith collections.
+- 📻 **Radio Tab**: Listen to live Islamic radio stations worldwide for sermons, Quranic recitations, and discussions.
+- 📖 **Quran Tab**: Access the complete Quran suras.
+- 📚 **Surah Details**: Get detailed information about each surah, including audio and text.
+- 📿 **Sebha Tab**: Keep track of daily dhikr and tasbih with a digital counter.
+- 📜 **Ahadith Tab**: Explore authentic Hadith collections.
+- 🌐 **Arabic and English Interface**: Switch between Arabic and English languages for the app interface.
+- 🌗 **Dark and Light Mode**: Choose between dark and light mode based on personal preferences.
+#📦 State Management
+The app employs Provider.
+## Installation
 
-📻 Radio Tab: Listen to live Islamic radio stations worldwide for sermons, Quranic recitations, and discussions.
+To get started with the Iqraa app, follow these simple steps:
 
-💬 Sebha Tab: Keep track of daily dhikr and tasbih with a digital counter, customizable for your needs.
+1. Clone the repository:
+   git clone https://github.com/Mariam-Elkhelawy/Iqraa
 
-⚙️ Settings Tab: Personalize your experience with language and theme.
+2. Navigate to the project directory:
 
-## Getting Started
+3. Install dependencies:
+   flutter pub get
 
-This project is a starting point for a Flutter application.
+4. Run the app:
+   flutter run
 
-A few resources to get you started if this is your first Flutter project:
+That's it! You're now ready to explore the Iqraa app on your device or emulator.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Contribution
+Contributions are welcome! If you have any suggestions, bug fixes, or new features to propose, feel free to do so.
