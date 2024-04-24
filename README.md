@@ -10,7 +10,8 @@
 - 📜 **Ahadith Tab**: Explore authentic Hadith collections.
 - 🌐 **Arabic and English Interface**: Switch between Arabic and English languages for the app interface.
 - 🌗 **Dark and Light Mode**: Choose between dark and light mode based on personal preferences.
-#📦 State Management
+  
+# 📦 State Management
 The app employs Provider.
 ## Installation
 
