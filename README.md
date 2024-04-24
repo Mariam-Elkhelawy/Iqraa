@@ -19,12 +19,9 @@ To get started with the Iqraa app, follow these simple steps:
 
 1. Clone the repository:
    git clone https://github.com/Mariam-Elkhelawy/Iqraa
-
 2. Navigate to the project directory:
-
 3. Install dependencies:
    flutter pub get
-
 4. Run the app:
    flutter run
 
