@@ -1,16 +1,32 @@
-# islami_app
+# 🕌 Iqraa App
 
-A new Flutter project.
+## Features
 
-## Getting Started
+- 📻 **Radio Tab**: Listen to live Islamic radio stations worldwide for sermons, Quranic recitations, and discussions.
+- 📖 **Quran Tab**: Access the complete Quran suras.
+- 📚 **Surah Details**: Get detailed information about each surah, including audio and text.
+- 📿 **Sebha Tab**: Keep track of daily dhikr and tasbih with a digital counter.
+- 📜 **Ahadith Tab**: Explore authentic Hadith collections.
+- 🌐 **Arabic and English Interface**: Switch between Arabic and English languages for the app interface.
+- 🌗 **Dark and Light Mode**: Choose between dark and light mode based on personal preferences.
+#📦 State Management
+The app employs Provider.
+## Installation
 
-This project is a starting point for a Flutter application.
+To get started with the Iqraa app, follow these simple steps:
 
-A few resources to get you started if this is your first Flutter project:
+1. Clone the repository:
+   git clone https://github.com/Mariam-Elkhelawy/Iqraa
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+2. Navigate to the project directory:
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+3. Install dependencies:
+   flutter pub get
+
+4. Run the app:
+   flutter run
+
+That's it! You're now ready to explore the Iqraa app on your device or emulator.
+
+## Contribution
+Contributions are welcome! If you have any suggestions, bug fixes, or new features to propose, feel free to do so.

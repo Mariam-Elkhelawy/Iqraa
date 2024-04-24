@@ -4,8 +4,8 @@ import 'package:iqraa_app/providers/my_provider.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:provider/provider.dart';
 
-import 'app_theme.dart';
-import 'models/hadith_model.dart';
+import '../app_theme.dart';
+import '../models/hadith_model.dart';
 
 class HadithDetails extends StatelessWidget {
   const HadithDetails({super.key});

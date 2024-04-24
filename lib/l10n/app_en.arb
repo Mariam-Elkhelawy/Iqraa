@@ -12,5 +12,6 @@
   "arabic": "Arabic",
   "theme": "Theme",
   "dark":"Dark Theme",
-  "light": "Light Theme"
+  "light": "Light Theme",
+  "wrong": "Something Went Wrong !"
 }

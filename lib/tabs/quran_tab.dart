@@ -5,12 +5,12 @@ import 'package:provider/provider.dart';
 import '../app_theme.dart';
 import '../models/sura_model.dart';
 import '../providers/my_provider.dart';
-import '../sura_details.dart';
+import '../widgets/sura_details.dart';
 
 class QuranTab extends StatelessWidget {
   QuranTab({super.key});
 
-  List<String> suraNames = [
+ final List<String> suraNames = [
     "الفاتحه",
     "البقرة",
     "آل عمران",
@@ -127,7 +127,7 @@ class QuranTab extends StatelessWidget {
     "الناس"
   ];
 
-  List<int> versesNumber = [
+ final List<int> versesNumber = [
     7,
     286,
     200,

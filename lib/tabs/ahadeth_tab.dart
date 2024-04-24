@@ -3,7 +3,7 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:provider/provider.dart';
 
 import '../app_theme.dart';
-import '../hadith_details.dart';
+import '../widgets/hadith_details.dart';
 import '../providers/ahadith_details_provider.dart';
 import '../providers/my_provider.dart';
 
