@@ -1,10 +1,10 @@
+import 'package:Iqraa/providers/my_provider.dart';
+import 'package:Iqraa/tabs/ahadeth_tab.dart';
+import 'package:Iqraa/tabs/quran_tab.dart';
+import 'package:Iqraa/tabs/radio_tab.dart';
+import 'package:Iqraa/tabs/sebha_tab.dart';
+import 'package:Iqraa/tabs/settings_tab.dart';
 import 'package:flutter/material.dart';
-import 'package:iqraa_app/providers/my_provider.dart';
-import 'package:iqraa_app/tabs/ahadeth_tab.dart';
-import 'package:iqraa_app/tabs/quran_tab.dart';
-import 'package:iqraa_app/tabs/radio_tab.dart';
-import 'package:iqraa_app/tabs/sebha_tab.dart';
-import 'package:iqraa_app/tabs/settings_tab.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:provider/provider.dart';
 

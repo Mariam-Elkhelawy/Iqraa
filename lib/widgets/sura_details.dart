@@ -2,14 +2,14 @@ import 'dart:convert';
 import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:iqraa_app/models/SuraAudioModel.dart';
-import 'package:iqraa_app/providers/my_provider.dart';
-import 'package:iqraa_app/providers/sura_details_provider.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:provider/provider.dart';
 import 'package:http/http.dart' as http;
 import '../app_theme.dart';
+import '../models/SuraAudioModel.dart';
 import '../models/sura_model.dart';
+import '../providers/my_provider.dart';
+import '../providers/sura_details_provider.dart';
 
 class SuraDetailsScreen extends StatefulWidget {
   const SuraDetailsScreen({super.key});
@@ -23,11 +23,19 @@ class _SuraDetailsScreenState extends State<SuraDetailsScreen> {
   final player = AudioPlayer();
 
   bool isTapped = false;
+  int currentAyahIndex = 0;
+
+  @override
+  void dispose() {
+    player.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
     var local = AppLocalizations.of(context)!;
     var model = ModalRoute.of(context)!.settings.arguments as SuraModel;
+
     Future<SuraAudioModel> getSuraAudio() async {
       var url = Uri.parse(
           'http://api.alquran.cloud/v1/surah/${model.index + 1}/ar.alafasy');
@@ -103,7 +111,6 @@ class _SuraDetailsScreenState extends State<SuraDetailsScreen> {
                             const SizedBox(
                               width: 12,
                             ),
-
                             IconButton(
                               icon: Icon(
                                 isTapped
@@ -115,21 +122,28 @@ class _SuraDetailsScreenState extends State<SuraDetailsScreen> {
                                     : AppTheme.yellowColor,
                               ),
                               onPressed: () async {
-                                num numOfAyahs =
-                                    ayahModel.data?.numberOfAyahs ?? 0;
-                                for (int i = 0; i < numOfAyahs; i++) {
-                                  final audioUrl = ayahs[i].audio;
-                                  if (audioUrl != null) {
-                                    await player.play(UrlSource(audioUrl));
-                                    Duration? duration =
-                                        await player.getDuration();
-                                    await Future.delayed(duration!);
-                                  }
-                                }
                                 setState(() {
-                                  isTapped=!isTapped;
-
+                                  isTapped = !isTapped;
                                 });
+
+                                if (isTapped) {
+                                  for (int i = currentAyahIndex;
+                                      i < ayahs.length;
+                                      i++) {
+                                    final audioUrl = ayahs[i].audio;
+                                    if (audioUrl != null) {
+                                      await player.play(UrlSource(audioUrl));
+                                      currentAyahIndex = i;
+                                      Duration duration =
+                                          await player.getDuration() ??
+                                              Duration.zero;
+                                      await Future.delayed(duration);
+                                      if (!isTapped) break;
+                                    }
+                                  }
+                                } else {
+                                  await player.pause();
+                                }
                               },
                             ),
                           ],

@@ -2,7 +2,6 @@
 
 ## Features
 
-
 - 📻 **Radio Tab**: Listen to live Islamic radio stations worldwide for sermons, Quranic recitations, and discussions.
 - 📖 **Quran Tab**: Access the complete Quran suras.
 - 📚 **Surah Details**: Get detailed information about each surah, including audio and text.

@@ -1,7 +1,7 @@
+import 'package:Iqraa/providers/my_provider.dart';
+import 'package:Iqraa/splash_screen.dart';
+import 'package:Iqraa/widgets/sura_details.dart';
 import 'package:flutter/material.dart';
-import 'package:iqraa_app/providers/my_provider.dart';
-import 'package:iqraa_app/splash_screen.dart';
-import 'package:iqraa_app/widgets/sura_details.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:provider/provider.dart';

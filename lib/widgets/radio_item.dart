@@ -1,8 +1,8 @@
+import 'package:Iqraa/app_theme.dart';
+import 'package:Iqraa/models/RadioModel.dart';
+import 'package:Iqraa/providers/my_provider.dart';
 import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
-import 'package:iqraa_app/app_theme.dart';
-import 'package:iqraa_app/models/RadioModel.dart';
-import 'package:iqraa_app/providers/my_provider.dart';
 import 'package:provider/provider.dart';
 
 class RadioItem extends StatefulWidget {

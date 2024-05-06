@@ -1,6 +1,6 @@
+import 'package:Iqraa/bottom_sheets/language_bottom_sheet.dart';
+import 'package:Iqraa/bottom_sheets/theme_bottom_sheet.dart';
 import 'package:flutter/material.dart';
-import 'package:iqraa_app/bottom_sheets/language_bottom_sheet.dart';
-import 'package:iqraa_app/bottom_sheets/theme_bottom_sheet.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:provider/provider.dart';
 
