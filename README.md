@@ -11,7 +11,8 @@
 - 🌗 **Dark and Light Mode**: Choose between dark and light mode based on personal preferences.
 - 📁 **The app loads suras and ahadith from local files**. This ensures offline accessibility and faster retrieval of data
 - 🌐 **Using REST API for Radio Tab and Surah Details** . This ensures real-time data retrieval and up-to-date information.
--  📦 **State Management**: The app employs Provider.
+- 🔊 **MP3 Playback:** Integrated MP3 player to play suras and radio streams.
+- 📦 **State Management**: The app employs Provider.
 
 ## Screenshots :
 <img src = "https://github.com/Mariam-Elkhelawy/Iqraa/assets/112530709/1c8a01a8-f263-4e00-8d58-c01366f51e0b" height = 400> &emsp; <img src = "https://github.com/Mariam-Elkhelawy/Iqraa/assets/112530709/cd8133d4-cb64-4d1e-aae9-1a748577f277"  height = 400>  &emsp; <img src = "https://github.com/Mariam-Elkhelawy/Iqraa/assets/112530709/9dfb2dac-814a-4182-8033-b058fda71d1c"  height = 400>  &emsp; <img src = "https://github.com/Mariam-Elkhelawy/Iqraa/assets/112530709/0a150471-c3c9-45fe-bd28-dc8a72e637b1"  height = 400>
