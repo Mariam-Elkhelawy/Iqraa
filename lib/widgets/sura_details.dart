@@ -161,14 +161,17 @@ class _SuraDetailsScreenState extends State<SuraDetailsScreen> {
                         Expanded(
                           child: ListView.builder(
                             itemBuilder: (context, index) {
-                              return Text(
-                                provider.verses[index],
-                                textAlign: TextAlign.center,
-                                style: GoogleFonts.inter(
-                                  fontSize: 20,
-                                  color: uIProvider.mode == ThemeMode.light
-                                      ? AppTheme.blackColor
-                                      : AppTheme.yellowColor,
+                              return Padding(
+                                padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                                child: Text(
+                                  provider.verses[index],
+                                  textAlign: TextAlign.center,
+                                  style: GoogleFonts.inter(
+                                    fontSize: 20,
+                                    color: uIProvider.mode == ThemeMode.light
+                                        ? AppTheme.blackColor
+                                        : AppTheme.yellowColor,
+                                  ),
                                 ),
                               );
                             },

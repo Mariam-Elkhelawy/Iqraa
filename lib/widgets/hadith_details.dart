@@ -58,19 +58,22 @@ class HadithDetails extends StatelessWidget {
                       : AppTheme.yellowColor,
                 ),
                 SizedBox(
-                  height: 20,
+                  height: 12,
                 ),
                 Expanded(
                   child: ListView.builder(
                     itemBuilder: (context, index) {
-                      return Text(model.content[index],
-                          textAlign: TextAlign.center,
-                          style: GoogleFonts.inter(
-                            fontSize: 20,
-                            color: provider.mode == ThemeMode.light
-                                ? AppTheme.blackColor
-                                : AppTheme.yellowColor,
-                          ),);
+                      return Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 16),
+                        child: Text(model.content[index],
+                            textAlign: TextAlign.center,
+                            style: GoogleFonts.inter(
+                              fontSize: 20,
+                              color: provider.mode == ThemeMode.light
+                                  ? AppTheme.blackColor
+                                  : AppTheme.yellowColor,
+                            ),),
+                      );
                     },
                     itemCount: model.content.length,
                   ),
