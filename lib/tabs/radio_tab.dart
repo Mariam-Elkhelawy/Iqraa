@@ -1,10 +1,10 @@
 import 'dart:convert';
+import 'package:Iqraa/app_theme.dart';
+import 'package:Iqraa/models/RadioModel.dart';
+import 'package:Iqraa/providers/my_provider.dart';
+import 'package:Iqraa/widgets/radio_item.dart';
 import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
-import 'package:iqraa_app/app_theme.dart';
-import 'package:iqraa_app/models/RadioModel.dart';
-import 'package:iqraa_app/providers/my_provider.dart';
-import 'package:iqraa_app/widgets/radio_item.dart';
 import 'package:provider/provider.dart';
 import 'package:http/http.dart' as http;
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';

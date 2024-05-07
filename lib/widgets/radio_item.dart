@@ -1,8 +1,8 @@
+import 'package:Iqraa/app_theme.dart';
+import 'package:Iqraa/models/RadioModel.dart';
+import 'package:Iqraa/providers/my_provider.dart';
 import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
-import 'package:iqraa_app/app_theme.dart';
-import 'package:iqraa_app/models/RadioModel.dart';
-import 'package:iqraa_app/providers/my_provider.dart';
 import 'package:provider/provider.dart';
 
 class RadioItem extends StatefulWidget {
@@ -20,13 +20,14 @@ class _RadioItemState extends State<RadioItem> {
   @override
   Widget build(BuildContext context) {
     var provider = Provider.of<MyProvider>(context);
+    bool isTextDirectionRTL = Directionality.of(context) == TextDirection.rtl;
 
     return SizedBox(
       width: MediaQuery.of(context).size.width,
       child: Column(
         children: [
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal:12.0),
+            padding: const EdgeInsets.symmetric(horizontal: 12.0),
             child: Text(
               textDirection: TextDirection.rtl,
               widget.radios.name ?? '',
@@ -38,7 +39,7 @@ class _RadioItemState extends State<RadioItem> {
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               Icon(
-                Icons.skip_previous,
+                isTextDirectionRTL ? Icons.skip_next : Icons.skip_previous,
                 color: provider.mode == ThemeMode.light
                     ? AppTheme.primaryColor
                     : AppTheme.yellowColor,
@@ -63,7 +64,7 @@ class _RadioItemState extends State<RadioItem> {
                 },
               ),
               Icon(
-                Icons.skip_next,
+                isTextDirectionRTL ? Icons.skip_previous : Icons.skip_next,
                 color: provider.mode == ThemeMode.light
                     ? AppTheme.primaryColor
                     : AppTheme.yellowColor,

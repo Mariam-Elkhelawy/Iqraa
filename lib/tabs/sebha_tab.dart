@@ -1,6 +1,6 @@
+import 'package:Iqraa/app_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:iqraa_app/app_theme.dart';
 import 'package:provider/provider.dart';
 
 import '../providers/my_provider.dart';
@@ -48,12 +48,12 @@ class _SebhaTabState extends State<SebhaTab> {
                 ? 'assets/images/ic_sebha_top.png'
                 : 'assets/images/dark_ic_sebha_top.png'),
           ),
-          SizedBox(height: 40),
+          const SizedBox(height: 40),
           Text(
             'عدد التسبيحات',
             style: Theme.of(context).textTheme.bodyLarge,
           ),
-          SizedBox(height: 40),
+          const SizedBox(height: 40),
           Container(
             width: 69,
             height: 81,
@@ -70,14 +70,14 @@ class _SebhaTabState extends State<SebhaTab> {
               ),
             ),
           ),
-          SizedBox(height: 20),
+          const SizedBox(height: 20),
           Container(
             width: 137,
             height: 51,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(25),
               color: provider.mode == ThemeMode.light
-                  ? AppTheme.primaryColor.withOpacity(.57)
+                  ? AppTheme.primaryColor
                   : AppTheme.yellowColor,
             ),
             child: Center(
